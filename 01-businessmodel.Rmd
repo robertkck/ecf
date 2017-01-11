@@ -1,24 +1,23 @@
 # Europe needs a new business model {#businessmodel}
 
-In this Chapter we argue that Europe’s growth model of exporting more of the same products to the rest of the world is coming under pressure due to increasing competition from emerging and transition countries (which is amplifying the effect that the market for the products that Europe is good at exporting is growing more slowly than in the past). At the same time, Europe was not able to build an advantage in disruptive technology fields.
+In this Chapter we argue that Europe’s growth model of exporting more of the same products to the rest of the world is coming under pressure due to increasing competition from emerging and transition countries while the market for the products that Europe is good at exporting is growing more slowly than in the past. At the same time, Europe was not able to build an advantage in disruptive technology fields that promise lower global competition and higher market growth.
 
 ## Developed countries lose their unique position on global markets {-}
-For many years the European Union’s growth model has been to fnd new markets for the
-products and services it is able to produce cheaper and better than most other countries. Tis
-model is under pressure. Te number of under-exploited markets is shrinking, while new
+For many years the European Union’s growth model has been to find new markets for the
+products and services it is able to produce cheaper and better than most other countries. This
+model is under pressure. The number of under-exploited markets is shrinking, while new
 competitors emerge quickly, challenging the comparative advantage of the EU even in higher
-value added goods and services. To secure growth and jobs in Europe, it is likely to be necessary to move to a new growth model built on developing emerging sectors with high value
-added. But in which sectors can Europe grow, and what economic policies would work?
+value added goods and services. To secure growth and jobs in Europe one promising strategy is to develop emerging sectors with high value added. But in which sectors can Europe grow, and what economic policies would work?
 
 ## Economic complexity {-}
 As emerging and transition countries moved up the value chain. There has been a notable convergence in the
 complexity of products exported by western and eastern countries. The Economic Complexity
-Indicator (ECI) developed by Harvard’s Center for International Development^[http://atlas.cid.harvard.edu/rankings/] ranks how
-diversifed and complex countries’ export baskets are based on their diversity (how many different products each country can produce) and the ubiquity of those products (the number of
-countries able to make those products^[Consequently, the ECI is a relative indicator. Tat is, it might go down even if the country does not change its export basket, as soon as other countries start to also export some of those products]). For almost all of the more than 100 ranked countries
+Indicator (ECI) developed by Harvard’s Center for International Development^[http://atlas.cid.Harvard.edu/rankings/] ranks how
+diversified and complex countries’ export baskets are based on their diversity (how many different products each country can produce) and the ubiquity of those products (the number of
+countries able to make those products^[Consequently, the ECI is a relative indicator. That is, it might go down even if the country does not change its export basket, as soon as other countries start to also export some of those products]). For almost all of the more than 100 ranked countries
 the indicator is between -2.5 and +2.5. In 2014, the ECI score for the United States was 1.36
 and 1.10 for China. For EU countries^[The rankings do not cover Cyprus, Luxembourg and Malta.] it ranges from 0.22 for Greece and 1.92 for Germany.
-Te most striking observation is the rapid increase in the complexity of Chinese exports.
+The most striking observation is the rapid increase in the complexity of Chinese exports.
 While ranked below Bulgaria in 2000, China had surpassed Denmark and Belgium by 2014.
 Over the same period, the US and major EU economies gradually lost some of their advantage
 as new players – including from central and eastern Europe – started to export products that
@@ -86,7 +85,7 @@ plot_ly(sectors, x = ~year) %>%
 ```
 
 This can be illustrated for electric machinery exports which in 2000 accounted for 20% of US and 15% of German exports. With China strongly specialising in exporting electric machinery, the share of machinery exports in German and US exports fell significantly.
-In the future, the same fate might await the global vehicles market, as China already today produces 25 million vehicles – mainly for its domestic market. This could have dramatic consequences, given the importance of the vehicles industry for countries like Germany – where vehicles are responsible for one fifth of the export.
+In the future, the same fate might await the global vehicles market, as China already today produces 25 million vehicles – mainly for its domestic market. This could have dramatic consequences, given the importance of the vehicles industry for countries like Germany – where vehicles are responsible for one fifth of the exports.
 
 ## The champions of the last technology cycle are not hosted in Europe {-}
 

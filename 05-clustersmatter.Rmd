@@ -19,7 +19,7 @@ example being Silicon Valley.
 
 <iframe width="900" height="400" frameborder="0" scrolling="no" src="//plot.ly/~fabio.matera/120.embed"></iframe>
 
-The four technologies benefit from different types of knowledge-spillovers. We can observe important technological clusters for batteries and solar panels, while this is less evident for electric vehicles and wind turbines. Solar panels represent the technology with the highest geographical concentration of citations: the gap between the interval 0-200 kilometres and the others is indeed very important. 
+The four technologies benefit from different types of knowledge-spillovers. We can observe important technological clusters for batteries and solar panels, while this is less evident for electric vehicles and wind turbines. Solar panels represent the technology with the highest geographical concentration of citations: the gap between the interval 0-200 kilometers and the others is indeed very important. 
 
-At the same time, solar PV and electric vehicles are more relying on related technologies while batteries and wind turbines mostly cite patents within the same technological class..
+At the same time, solar PV and electric vehicles are more relying on related technologies while batteries and wind turbines mostly cite patents within the same technological class.
 

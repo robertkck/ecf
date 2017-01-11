@@ -1,6 +1,6 @@
 # Low carbon is promising
 
-In this part we argue that low carbon technologies such as electric vehicles, wind motors, batteries and solar PV have disproportionate growth potential. They are seeing disruptive innovation (\@ref(fig:shares)) and strongly increased investment which is likely to continue (\@ref(fig:investment)). Consequently, we identify the low-carbon technology sector as promising
+In this part we argue that low carbon technologies such as electric vehicles, wind motors, batteries and solar PV have disproportionate growth potential. They are seeing disruptive innovation (\@ref(fig:shares)) and strongly increased investment which is likely to continue (\@ref(fig:investment)). Consequently, producing low-carbon technologies promises to generate above average value-added and, hence, to positively contribute to growth in countries that hold a comparative advantage in this sector. 
 
 ## Low carbon technology in innovation and export {-}
 
@@ -63,7 +63,7 @@ forbes$hovertext = paste("", forbes$company, '<br>Sector:', forbes$sector, '<br>
 
 plot_ly(investment, x = ~year,y= ~windsolar, name = "Wind and solar PV", width=800, type='bar') %>%
   add_bars(y= ~electric, name = "Electric vehicles and plug-ins") %>%
-  add_bars(y= ~ccs, name = "Carbon Capture and Storage",) %>%
+  add_bars(y= ~ccs, name = "Carbon Capture and Storage") %>%
   layout(
     barmode='stack',
     xaxis = list(title = "year"),
@@ -73,8 +73,5 @@ plot_ly(investment, x = ~year,y= ~windsolar, name = "Wind and solar PV", width=8
 
 ```
 
-The political momentum to combat climate change was reconfrmed and reinforced in
-2015, when for the frst time all countries agreed in the Paris Agreement to limit carbon emissions and to aim for carbon neutrality in the second half of the century. Together with
-growing electricity demand in emerging countries, the market for low-carbon energy will
-continue to increase. 
-Investments in 2015 already exceed prediction
+The political momentum to combat climate change was reconfirmed and reinforced in
+2015, when for the first time all countries agreed in the Paris Agreement to limit carbon emissions and to aim for carbon neutrality in the second half of the century. Together with growing electricity demand in emerging countries, the market for low-carbon energy will continue to increase. Investments in 2015 actually exceed the presented.

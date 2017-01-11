@@ -17,7 +17,7 @@ exporters of wind turbines.
 
 2. Strength of current innovation: 
 Other EU countries might have the potential to develop comparative advantages based on
-their specialisation in innovation in these new f elds. For example, Germany is already strong
+their specialisation in innovation in these new fields. For example, Germany is already strong
 in patenting electric vehicle technology and might turn this into a comparative advantage
 
 3. Innovation strength in nearby technologies: 
@@ -28,15 +28,15 @@ east European countries exhibit specialisation in technologies related to electr
 photovoltaic cells.
 
 4. Regional clusters: 
-Finally we fnd that – while only Belgium is good at exporting batteries and no EU country
-is good at inventing batteries – several regional clusters exist that are generating signifcant
+Finally we find that – while only Belgium is good at exporting batteries and no EU country
+is good at inventing batteries – several regional clusters exist that are generating significant
 battery technology patents. These clusters might be the nuclei of future growth.
 
-We can therefore conclude that the EU has potential, but that one-size-fts-all policies
+We can therefore conclude that the EU has potential, but that one-size-fits-all policies
 would ignore the complexity of the task of supporting the EU economy to gain a competitive
 edge in new products and services that will form the basis for future growth and jobs. To
-identify policies to foster future competitiveness we suggest a four-step flter (below), with
-each step, as much as possible, based on transparent criteria. Tis would also enable ex-post
+identify policies to foster future competitiveness we suggest a four-step filter (below), with
+each step, as much as possible, based on transparent criteria. This would also enable ex-post
 evaluation – which in the medium term allows the policy toolbox to be improved.
 
 ![Four-step filter](images/conc.png){#yo}

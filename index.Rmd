@@ -17,11 +17,11 @@ twitter-handle: GeorgZachmann
 
 # Preface {-}
 
-This website serves to illustrate the findings of the policy contribution "An approach to identify the sources of low-carbon growth for Europe" [@zachmann] and allows a deeper dive into the underlying data.  The website is focused on presenting figures and deliberately only offers curt descriptions/interpretations. It is currently structured into five chapters but we plan to extend it when further steps of our analysis become available.
+This website serves to illustrate the findings of the policy contribution "An approach to identify the sources of low-carbon growth for Europe" [@zachmann] and allows a deeper dive into the underlying data.  The website is focused on presenting figures and deliberately only offers succinct descriptions/interpretations. It is currently structured into five chapters but we plan to extend it when further steps of our analysis become available.
 
 
 ![](images/cover.png)
 
-The research underlying this report has been fnancially supported by the European Climate Foundation’s Industrial Innovation for Competitiveness Initiative (i24c).
+The research underlying this report has been financially supported by the European Climate Foundation’s Industrial Innovation for Competitiveness Initiative (i24c).
 
 
