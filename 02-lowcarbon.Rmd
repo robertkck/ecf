@@ -1,0 +1,80 @@
+# Low carbon is promising
+
+In this part we argue that low carbon technologies such as electric vehicles, wind motors, batteries and solar PV have disproportionate growth potential. They are seeing disruptive innovation (\@ref(fig:shares)) and strongly increased investment which is likely to continue (\@ref(fig:investment)). Consequently, we identify the low-carbon technology sector as promising
+
+## Low carbon technology in innovation and export {-}
+
+<!-- The share of electric vehicle technology patents in all patents has increased eightfold since 2000, while it has quadrupled for wind turbines and doubled for photovoltaics. In the same period, the share of exports of wind turbines and electric vehicles in global gross exports increased six fold, while export of photovoltaic cells increased threefold (despite massively falling prices). Trade in them (apart from batteries) has grown faster than total international trade. -->
+
+<!-- <iframe width="900" height="400" frameborder="0" scrolling="no" src="//plot.ly/~rkalcik/28.embed"></iframe> -->
+
+```{r shares, echo = FALSE, fig.cap="Caption", message=FALSE}
+library('dplyr')
+library('tidyr')
+library('plotly')
+
+pshare <- read.csv("data/patent_share.csv", header=TRUE, sep=",")
+eshare <- read.csv("data/export_share.csv", header=TRUE, sep=",")
+
+eshare <- gather(eshare, ename, eshare, -year)
+eshare$ipc <- factor(eshare$ename)
+shares <- inner_join(eshare, pshare)
+
+plot_ly(shares, x = ~year, color= ~pname, width=800) %>%
+  add_lines(y= ~pshare, name = 'Patent Share') %>%
+  add_lines(y = ~eshare, name = 'Export share', visible=FALSE) %>%
+  layout(
+    xaxis = list(title = "year"),
+    yaxis = list(title = "Share in total"),
+    updatemenus = list(
+      list(
+        y = 1,
+        x=-0.1,
+        yaxis=list(range=c(0,1150)),
+        buttons = list(
+          list(method = "restyle",
+               args = list("visible", list(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE)),
+               label = "Patent Share"),
+  
+          list(method = "restyle",
+               args = list("visible", list(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)),
+               label = "Export Share")))
+      )
+  )
+
+```
+
+
+The export of electric vehicles, wind motors, batteries and solar PV has been growing faster than the export of other products. So their share in global exports is increasing.
+At the same time, these technologies also experienced faster technological development than other technologies – indicating higher returns to innovation.
+
+## Global investment scenario {-}
+
+<!-- ![Caption](images/figure5.png){width=100%} -->
+
+```{r investment, echo = FALSE, fig.cap="Caption", message=FALSE}
+library('dplyr')
+library('tidyr')
+library('plotly')
+
+investment <- read.csv("data/investment.csv", header=TRUE, sep=",")
+forbes$hovertext = paste("", forbes$company, '<br>Sector:', forbes$sector, '<br>Country:', forbes$country)
+
+
+plot_ly(investment, x = ~year,y= ~windsolar, name = "Wind and solar PV", width=800, type='bar') %>%
+  add_bars(y= ~electric, name = "Electric vehicles and plug-ins") %>%
+  add_bars(y= ~ccs, name = "Carbon Capture and Storage",) %>%
+  layout(
+    barmode='stack',
+    xaxis = list(title = "year"),
+    yaxis = list(title = "USD bln.")
+  )
+
+
+```
+
+The political momentum to combat climate change was reconfrmed and reinforced in
+2015, when for the frst time all countries agreed in the Paris Agreement to limit carbon emissions and to aim for carbon neutrality in the second half of the century. Together with
+growing electricity demand in emerging countries, the market for low-carbon energy will
+continue to increase. 
+Investments in 2015 already exceed prediction

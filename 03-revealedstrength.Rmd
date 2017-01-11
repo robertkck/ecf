@@ -1,0 +1,26 @@
+# Revealed Strength
+In this Chapter we argue that, in a market economy environment, current strength is a good predictor of future strength in producing and exporting certain products. Current strength indicates that crucial factors are available and their prices are appropriate, that knowledge and a network of suppliers are
+established and that the regulatory environment is conducive. While having a comparative
+advantage in a product provides some indication that a sector might grow in a country, the
+absence of a revealed comparative advantage does not imply that a country is unable to develop new strengths in the future. One of the building blocks of future comparative advantage
+– especially in new technologies – is innovation. Tus, countries that focus their patenting
+activity on specifc technologies are likely to also have a comparative advantage in exporting
+the corresponding products.
+
+## Revealed strength in exports and technology {-}
+
+<!-- <iframe id="RTA" width="800" height="536" frameborder="0" scrolling="no" src="//plot.ly/~rkalcik/52.embed?link=false"></iframe> -->
+<!-- RCA next to RTA, tech drop-down, year-slider (3-year groups) 1996 - 2013 -->
+
+<iframe id="RTA" width="800" height="500" frameborder="0" scrolling="no" src="https://robertkck.shinyapps.io/rtarca/"></iframe>
+
+
+We frst investigate which countries are already specialised in our four
+low-carbon technologies in term of trade and innovation. We focus on two indicators of relative strength
+
+* Revealed comparative advantage (RCA) assumes that market-based economies reveal their underlying comparative advantages by exporting those
+goods and services in which they are comparatively good
+
+* Thereby, the revealed
+technology advantage (RTA) is the equivalent to the revealed comparative advantage in terms
+of patenting. 

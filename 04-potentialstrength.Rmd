@@ -1,0 +1,29 @@
+# Potential 
+In this chapter, we want to determine which countries might have
+some of the prerequisites for developing an advantage in the four technologies of interest.
+We build on the fact that countries fnd it easier to innovate in technologies that are
+related to technologies they are already good at^[For example, Austria developed a technology advantage in electric propulsion and Ireland in wind turbines]. As a measure of technology proximity,
+we use the relative frequency with which two technology classes (in fact technology codes)
+appear as part of the same patent. We then analyse which
+countries are good at patenting the technologies we identifed as being ‘nearby’ our four
+low-carbon technologies.
+
+## Technological proximity {-}
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~gzachmann/31.embed"></iframe>
+
+The heatmap shows the strength of the relationship between two technologies. The connection between two technologies is high if there are many patents classified to belong to both. High relative co-occurence on a patent leads to strong relatedness in red. Blue shows technology classes that are not related. The heatmap illustrates that IPC codes are more likely to concur with
+IPC codes that are classifed close to them (ie that share the same frst two digits), as the areas
+of high concurrence are close to the main diagonal.
+
+To give one example, to establish Slovakia’s potential for wind turbine innovation, we look
+at the two most-related technologies, namely ‘machines or engines for liquids’ and ‘control
+or regulation of electric motors’. We fnd that the potential RTA of Slovakia for wind turbines is
+rather high, because it is already specialised in the two nearby technologies. In fact, Slovakia
+is also already specialised in wind turbines.
+
+## Potential strength in technology {-}
+<iframe id="RTA" width="800" height="500" frameborder="0" scrolling="no" src="https://robertkck.shinyapps.io/prtarca/"></iframe>
+
+In general we fnd that countries that specialise in nearby technologies are already also
+specialised in the low-carbon technology of interest – somewhat validating our approach. The
+interesting cases are, however, those countries that are good at innovating in nearby technologies, but which have not yet developed a specialisation in the technology of interest.

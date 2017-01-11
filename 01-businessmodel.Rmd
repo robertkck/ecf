@@ -1,0 +1,119 @@
+# Europe needs a new business model {#businessmodel}
+
+In this Chapter we argue that Europe’s growth model of exporting more of the same products to the rest of the world is coming under pressure due to increasing competition from emerging and transition countries (which is amplifying the effect that the market for the products that Europe is good at exporting is growing more slowly than in the past). At the same time, Europe was not able to build an advantage in disruptive technology fields.
+
+## Developed countries lose their unique position on global markets {-}
+For many years the European Union’s growth model has been to fnd new markets for the
+products and services it is able to produce cheaper and better than most other countries. Tis
+model is under pressure. Te number of under-exploited markets is shrinking, while new
+competitors emerge quickly, challenging the comparative advantage of the EU even in higher
+value added goods and services. To secure growth and jobs in Europe, it is likely to be necessary to move to a new growth model built on developing emerging sectors with high value
+added. But in which sectors can Europe grow, and what economic policies would work?
+
+## Economic complexity {-}
+As emerging and transition countries moved up the value chain. There has been a notable convergence in the
+complexity of products exported by western and eastern countries. The Economic Complexity
+Indicator (ECI) developed by Harvard’s Center for International Development^[http://atlas.cid.harvard.edu/rankings/] ranks how
+diversifed and complex countries’ export baskets are based on their diversity (how many different products each country can produce) and the ubiquity of those products (the number of
+countries able to make those products^[Consequently, the ECI is a relative indicator. Tat is, it might go down even if the country does not change its export basket, as soon as other countries start to also export some of those products]). For almost all of the more than 100 ranked countries
+the indicator is between -2.5 and +2.5. In 2014, the ECI score for the United States was 1.36
+and 1.10 for China. For EU countries^[The rankings do not cover Cyprus, Luxembourg and Malta.] it ranges from 0.22 for Greece and 1.92 for Germany.
+Te most striking observation is the rapid increase in the complexity of Chinese exports.
+While ranked below Bulgaria in 2000, China had surpassed Denmark and Belgium by 2014.
+Over the same period, the US and major EU economies gradually lost some of their advantage
+as new players – including from central and eastern Europe – started to export products that
+were previously only exported by the most-developed countries. This signals that incumbent
+exporters face increasing competitive pressure.
+
+Year          | USA    | China | Germany | France | Spain | UK | Poland | Hungary
+------------- | ------ | ----- | ------- | ------ | ----- | -- | ------ | -------
+1995          | 2.05   | 0.21  | 2.65    | 1.94   | 1.40  | 2.05 | 0.80 | 0.99
+2014          | 1.10   | 1.10  |1.92|1.29|0.82|1.48|0.93| 1.50
+Change 1995 - 2014 | -34% | 424% | -28%|-34%|-41%|-28%|16%|52%
+
+Source: CID
+
+
+
+## Emerging economies move up the value chain – sometimes outcompeting incumbents {-}
+<!-- The transformation of China into an economy that can compete with incumbent -->
+<!-- exporters is impressively illustrated by the change in its export basket. While in 1990, electric machinery already made up 10 percent of German and 12 percent of US exports, it only -->
+<!-- accounted for 6 percent of Chinese exports. By 2015, electric machinery had become the -->
+<!-- backbone of Chinese exports, accounting for a quarter of the country’s huge foreign sales. -->
+<!-- At the same time the US – after a surge around the year 2000 – dramatically shifted its export -->
+<!-- focus away from electric machinery to other products. -->
+
+<!-- Europe’s growth for a long time rested on fnding new markets for its incumbent export -->
+<!-- industry. German car exports are a striking example of this development. The share of road -->
+<!-- vehicles in German gross exports grew from 12 percent in 1965 to 15 percent in 2010 and to -->
+<!-- 18 percent in 2015. German export-based industry is thus extremely vulnerable to just one -->
+<!-- single product. So far, China (and other emerging countries) remains a sleeping dragon. But if China – which has developed a signifcant car industry for the massive domestic market -->
+<!-- (25 million cars per year^[According to the China Association of Automobile Manufacturers, 25 million vehicles were sold in China in 2015, of -->
+<!-- which 41 percent were a Chinese brand: http://www.caam.org.cn/AutomotivesStatistics/20160120/1305184264.html.]) – manages to increase the share of cars in its export basket from -->
+<!-- the current 3 percent at the same pace as it did for electric machinery, the German economy -->
+<!-- would come under massive pressure. -->
+
+```{r sectors, echo = FALSE, fig.cap="Caption", message=FALSE}
+library('dplyr')
+library('tidyr')
+library('plotly')
+
+sectors <- read.csv("data/export_sectors.csv", header=TRUE, sep="\t")
+
+sectors <- gather(sectors, country, trade, -year, -good)
+sectors <- spread(sectors, good, trade)
+
+plot_ly(sectors, x = ~year) %>%
+  add_lines(y= ~road, color = ~country, name = 'Road Vehicles') %>%
+  add_lines(y = ~electric, color = ~country, name = 'Electric Machinery', visible=FALSE)%>%
+  layout(
+  xaxis = list(title = "year"),
+  yaxis = list(title = "Share in total gross exports"),
+  updatemenus = list(
+    list(
+      y = 1,
+      x=-0.1,
+      buttons = list(
+        list(method = "restyle",
+             args = list("visible", list(TRUE, FALSE)),
+             label = "Road Vehicles"),
+
+        list(method = "restyle",
+             args = list("visible", list(FALSE, TRUE)),
+             label = "Electric Machinery")))
+  ))
+
+```
+
+This can be illustrated for electric machinery exports which in 2000 accounted for 20% of US and 15% of German exports. With China strongly specialising in exporting electric machinery, the share of machinery exports in German and US exports fell significantly.
+In the future, the same fate might await the global vehicles market, as China already today produces 25 million vehicles – mainly for its domestic market. This could have dramatic consequences, given the importance of the vehicles industry for countries like Germany – where vehicles are responsible for one fifth of the export.
+
+## The champions of the last technology cycle are not hosted in Europe {-}
+
+<!-- ![Caption](images/image001.png){ width=50% } -->
+
+```{r forbes, echo = FALSE, fig.cap="Caption", message=FALSE}
+library('dplyr')
+library('tidyr')
+library('plotly')
+
+forbes <- read.csv("data/forbes.csv", header=TRUE, sep=",")
+forbes$hovertext = paste("", forbes$company, '<br>Sector:', forbes$sector, '<br>Country:', forbes$country)
+
+
+plot_ly(forbes, x = ~year) %>%
+  add_markers(y= ~value, color = ~Continent, 
+              symbols= ~it, name = 'company', 
+              #text = ~company
+              text = ~hovertext
+  ) %>%
+  layout(
+  xaxis = list(title = "year"),
+  yaxis = list(title = "Market Valuation")
+  )
+
+
+```
+
+In the 19th and early 20th centuries Europe hosted most of the world leaders in the disruptive technologies of that time, such as manufacturers of railways and trains, chemicals, pharmaceuticals, electrical appliances and cars.
+In 2016, there were only seven EU companies among the 50 largest in the world, and the average year of their incorporation was 1913 (compared to 1943 in the US and 1964 in the rest of the world). The five largest companies in the world are all US companies, and four of them are IT companies formed after 1975.

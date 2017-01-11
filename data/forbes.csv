@@ -1,0 +1,63 @@
+company,country,year,sector,value,it,Continent
+Alphabet,US ,1998,Computer Services ,500.1,IT,US
+Microsoft ,US ,1975,Software & Programming ,407,IT,US
+Facebook ,US ,2004,Computer Services ,314.8,IT,US
+Amazon.com ,US ,1994,Internet Retail ,292.6,IT,US
+Oracle ,US ,1977,Software & Programming ,168.9,IT,US
+Intel ,US ,1968,Semiconductors ,149.3,IT,US
+IBM ,US ,1911,Computer Services ,142.7,IT,US
+ExxonMobil ,US ,1881,Oil & Gas Operations ,363.3,non-IT,US
+Johnson & Johnson ,US ,1886,"Medical Equipment &
+Supplies ",312.6,non-IT,US
+General Electric ,US ,1892,Conglomerates ,285.6,non-IT,US
+AT&T ,US ,1983,"Telecommunications
+services ",234.2,non-IT,US
+Procter & Gamble ,US ,1837,Household/Personal Care ,218.9,non-IT,US
+Wal-Mart Stores ,US ,1962,Discount Stores ,215.7,non-IT,US
+"Verizon
+Communications ",US ,1983,Telecommunications services ,206.2,non-IT,US
+Pfzer ,US ,1849,Pharmaceuticals ,205.7,non-IT,US
+Coca-Cola ,US ,1886,Beverages ,192.8,non-IT,US
+Chevron ,US ,1879,Oil & Gas Operations ,192.3,non-IT,US
+Home Depot ,US ,1978,Home Improvement Retail ,169.8,non-IT,US
+Walt Disney ,US ,1923,Broadcasting & Cable ,169.3,non-IT,US
+Merck ,US ,1891,Pharmaceuticals ,157.2,non-IT,US
+"Phillip Morris
+International ",US ,1923,Tobacco ,150.3,non-IT,US
+Comcast ,US ,1963,Broadcasting & Cable ,148.2,non-IT,US
+PepsiCo ,US ,1898,Beverages ,147.3,non-IT,US
+Cisco Systems ,US ,1984,"Communications
+Equipment ",141.7,non-IT,US
+Gilead Sciences ,US ,1988,Biotech ,138.1,non-IT,US
+UnitedHealth group ,US ,1977,Managed Health Care ,127.5,non-IT,US
+Amgen ,US ,1980,Biotech ,122.4,non-IT,US
+Altria Group ,US ,1985,Tobacco ,118.4,non-IT,US
+"Bristol-Myers
+Squibb ",US ,1887,Pharmaceuticals ,118.2,non-IT,US
+Schlumberger ,US ,1926,Oil Services & Equipment ,111.1,non-IT,US
+CVS Health ,US ,1996,Drug Retail ,110.8,non-IT,US
+Medtronic ,US ,1949,"Medical Equipment &
+Supplies ",110.7,non-IT,US
+"Anheuser-Bush
+InBev ",Belgium ,1852,Beverages ,204.6,non-IT,Europe
+Novo Nordisk ,Denmark ,1923,Pharmaceuticals ,144.9,non-IT,Europe
+Total ,France ,1924,Oil & Gas Operations ,121.9,non-IT,Europe
+Sanof ,France ,1973,Pharmaceuticals ,115.4,non-IT,Europe
+Royal Dutch Shell ,Netherlands ,1890,Oil & Gas Operations ,210,non-IT,Europe
+Unilever ,Netherlands ,1930,Food Processing ,137.2,non-IT,Europe
+Nestle ,Switzerland ,1866,Food Processing ,235.7,non-IT,Europe
+Roche Holding ,Switzerland ,1896,Pharmaceuticals ,222.2,non-IT,Europe
+Novartis ,Switzerland ,1996,Pharmaceuticals ,203.8,non-IT,Europe
+"British American
+Tobacco ",UK ,1902,Tobacco ,111,non-IT,Europe
+China Mobile ,China ,1997,"Telecommunications
+services ",241,non-IT,Asia
+PetroChina ,China ,1999,Oil & Gas Operations ,203.8,non-IT,Asia
+Toyota ,Japan ,1937,"Auto & Truck
+Manufacturers ",177,non-IT,Asia
+"Samsung
+Electronics ",South Korea ,1969,Semiconductors ,161.6,IT,Asia
+Alibaba ,China ,1999,Internet Retail ,200.7,IT,Asia
+Tencent Holdings ,China ,1998,Computer Services ,197.4,IT,Asia
+"Taiwan
+Semiconductor ",Taiwan ,1987,Semiconductors ,125.6,IT,Asia

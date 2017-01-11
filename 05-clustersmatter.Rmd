@@ -1,0 +1,25 @@
+# Clusters matter
+Innovative activity is not evenly distributed within countries. It largely follows the concentration of industrial activity. Consequently, patent data is helpful data in identifying regional
+industrial strengths (clusters). The advantage over other types of data is that patent data is
+available for concrete locations (the address of the applicant), with a narrowly categorised
+technology description (the IPC code). 
+
+## Innovation in technologies is clustered in only a few regions {-}
+<!-- ![Caption](images/B60L.gif){width=75%} -->
+
+
+``` {r leaflet, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+knitr::include_app("https://robertkck.shinyapps.io/patent_map/", height=700)
+```
+
+
+Innovation in individual technologies is typically clustered in only a few regions. Regional clusters of patenting activity in certain technology areas are not just a result of
+clustered industrial activity. They also point to innovation spillovers and the most fascinating
+example being Silicon Valley.  
+
+<iframe width="900" height="400" frameborder="0" scrolling="no" src="//plot.ly/~fabio.matera/120.embed"></iframe>
+
+The four technologies benefit from different types of knowledge-spillovers. We can observe important technological clusters for batteries and solar panels, while this is less evident for electric vehicles and wind turbines. Solar panels represent the technology with the highest geographical concentration of citations: the gap between the interval 0-200 kilometres and the others is indeed very important. 
+
+At the same time, solar PV and electric vehicles are more relying on related technologies while batteries and wind turbines mostly cite patents within the same technological class..
+
