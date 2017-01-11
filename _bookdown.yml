@@ -1,0 +1,11 @@
+book_filename: "ecf_draft"
+chapter_name: "Chapter "
+rmd_diles: [
+  "index.Rmd",
+  "01-businessmodel.Rmd",
+  "02-lowcarbon",
+  "03-revealedstrength.Rmd",
+  "04-potentialstrength.Rmd",
+  "05-clustersmatter.Rmd",
+  "06-conclusion.Rmd"
+]

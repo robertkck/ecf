@@ -1,0 +1,216 @@
+
+``` {r leaflet, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+library("leaflet")
+# library("geojsonio")
+# library("htmltools") 
+# devtools::install_github("ramnathv/htmlwidgets")
+# library(htmlwidgets)
+
+main_data <- read.table('data/patents.csv', sep=',', quote = "" , header=T)
+main_data <- na.omit(main_data)
+main_data <- main_data[main_data$year==2008,]
+
+# geoj <- geo
+
+ipc <- as.character(unique(main_data$ipc_selector))
+pal <- colorFactor(c("navy", "red", "darkgreen", "yellow"), domain = ipc )
+m <- leaflet() %>%
+   # addProviderTiles("Stamen.TonerLite")
+   addTiles() %>% # Add default OpenStreetMap map tiles
+   fitBounds(-15, 34, 32, 70)
+  
+m %>%
+  addCircleMarkers( data=main_data[main_data$ipc_selector=="B60L",],
+      radius = 2,
+      color = ~pal(ipc_selector),
+      stroke = FALSE, fillOpacity = 0.5,
+      group = "Electric vehicles"
+  ) %>%
+  addCircleMarkers( data=main_data[main_data$ipc_selector=="H01M",],
+      radius = 2,
+      color = ~pal(ipc_selector),
+      stroke = FALSE, fillOpacity = 0.5,
+      group = "Batteries"
+  ) %>%
+  addCircleMarkers( data=main_data[main_data$ipc_selector=="F03D",],
+      radius = 2,
+      color = ~pal(ipc_selector),
+      stroke = FALSE, fillOpacity = 0.5,
+      group = "Wind turbines"
+  ) %>%
+  addCircleMarkers( data=main_data[main_data$ipc_selector=="H01L",],
+      radius = 2,
+      color = ~pal(ipc_selector),
+      stroke = FALSE, fillOpacity = 0.5,
+      group = "Photovoltaik"
+  ) %>%  
+  addLayersControl(
+    baseGroups = c("Electric vehicles", "Batteries", "Photovoltaik", "Wind turbines"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+  # Print the map
+```
+
+
+``` {r patent_map, echo=FALSE, warning=FALSE, message=FALSE, eval=FALSE}
+library(ggplot2)
+library(ggmap)
+library(gganimate)
+library(tidyverse)
+library(plotly)
+
+main_data <- read.table('data/patents.csv', sep=',', quote = "" , header=T)
+ipc <- as.character(unique(main_data$ipc_selector))
+
+euro_map <- get_map(location = c(lon = 7, lat = 52), #c(lon = 9.204555, lat = 45.477418),#
+                      color = "color",
+                      source = "google",
+                      maptype = "terrain",
+                      zoom = 4)
+
+
+ipc_code = "F03D"
+thisdata <- main_data %>% filter(main_data$ipc_selector == ipc_code)
+
+gmap <- ggmap(euro_map, extent = "normal", maprange=T) %+% thisdata  +
+  # aes(x = lon, y = lat, frame=year) +
+  geom_density2d(h=c(2, 2)) +
+  geom_point(size=1.5, color="darkgreen", aes(frame=year)) +
+  stat_density2d(aes(fill = ..level.., alpha = ..level..),
+                 size = 0.01, bins = 16, geom = 'polygon', h=c(2, 2)) +
+  scale_fill_gradient(low = "blue", high = "red") +
+  scale_alpha(range = c(0.2, 0.5), guide = T) +
+  coord_map(projection="mercator",
+            xlim=c(attr(euro_map, "bb")$ll.lon, attr(euro_map, "bb")$ur.lon),
+            ylim=c(attr(euro_map, "bb")$ll.lat, attr(euro_map, "bb")$ur.lat)) +
+  theme(legend.position = "none", axis.title = element_blank(), text = element_blank())
+
+# ggplotly(gmap)
+# gg_animate(gmap, filename="F03D.gif")
+ gmap
+
+
+```
+
+```{r rta2, echo = FALSE, fig.cap="Caption", message=FALSE}
+
+library('dplyr')
+library('plotly')
+library('ggplot2')
+library('ggmap')
+library('plotly')
+library('maptools')
+library('ggthemes')
+library('gganimate')
+
+RTA <- read.csv("data/RTA.csv", header=TRUE, sep=",", stringsAsFactors = FALSE)
+RTA$person_ctry_code[RTA$person_ctry_code=="GB"]="UK"
+
+EU_NUTS <- readShapePoly(fn="data/map/NUTS_RG_60M_2013")
+eumap <- subset(EU_NUTS, nchar(as.character(NUTS_ID)) == 2)
+eumap <- fortify(eumap, region="NUTS_ID", order="plotOrder")
+
+map_merge <- left_join(RTA, eumap,  by=c("person_ctry_code"="id"), all.y=TRUE)
+# map_merge <- map_merge[order(map_merge$year, map_merge$order),]
+map_merge <- map_merge[order(map_merge$person_ctry_code, map_merge$year, map_merge$order),]
+map_merge <- subset(map_merge, long > -15 & long < 32 & lat > 34 & lat < 75)
+
+gg <- map_merge %>%
+  ggplot(aes(x = long, y = lat, frame=year, group=group, id=person_ctry_code )) +
+  geom_polygon(aes(fill = RTA_B60L)) +
+  theme_classic() +
+  coord_map(projection='mercator') +
+  theme(panel.grid = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank())
+
+gg <- animation_opts(gg, mode='immediate', frame=0, transition=0)
+
+
+# eumap <- subset(eumap, long > -15 & long < 32 & lat > 34 & lat < 75)
+# eumap <- eumap[order(eumap$order),]
+# conc <- unique(eumap[,c('id','group')])
+# RTA <- left_join(RTA, conc,  by=c("person_ctry_code"="id"), all.y=TRUE)
+# eumap$id <- eumap$group
+# gg <- ggplot(RTA) +
+#     # geom_map(aes(map_id = person_ctry_code), map=eumap, color = "#8f8f8f", size = 0.1, fill = NA) +
+#     geom_map(aes(map_id = group, fill = RTA_B60L, frame=year, id=group), map=eumap, na.rm=TRUE) + 
+#     expand_limits(x = eumap$long, y = eumap$lat) +
+#     theme_classic() +
+#     coord_map(projection='mercator')
+
+# gg_animate(gg)
+
+ggplotly(gg)
+
+```
+
+
+
+
+```{r}
+library('ggplot2')
+# library('gganimate')
+# library('animation')
+library('plotly')
+# library('gapminder')
+data(gapminder, package = "gapminder")
+gg <- ggplot(gapminder, aes(gdpPercap, lifeExp, frame = year, ids = country)) +
+  geom_point(aes(size = pop, color = continent)) +
+  scale_x_log10()
+ggplotly(gg)
+
+```
+
+
+<iframe src="http://atlas.media.mit.edu/en/visualize/embed/stacked/hs92/export/show/all/0101/1995.2014/?controls=false"> Error loading</iframe>
+
+<iframe width="560" height="315" src="http://atlas.media.mit.edu/en/visualize/embed/tree_map/hs96/export/chn/all/show/2014/?controls=false" frameborder="0" ></iframe>
+
+
+
+
+```{r rta, echo = FALSE, fig.cap="Caption", message=FALSE}
+library('dplyr')
+library('tidyr')
+library('plotly')
+library('countrycode')
+library('ggplot2')
+library('ggmap')
+library('maptools')
+
+RTA <- read.csv("data/RTA.csv", header=TRUE, sep=",")
+RTA$ctry <- countrycode(RTA$person_ctry_code, 'iso2c', 'iso3c')
+
+colfunc <- colorRamp(c("#B40026", "#ffffcc", "#08e01e"))
+
+ g <- list(
+   scope = 'europe'
+ )
+ p <- plot_geo(RTA) %>%
+   add_trace(
+     z = ~RTA_B60L, zmax=3, zmin=0,
+     locations = ~ctry ,
+     colors=colfunc ,#color = ~RTA_B60L,
+     autocolorscale = FALSE,
+     colorbar = (
+        title = 'RTA'
+     )
+   ) %>%
+   add_trace(
+     type='scattergeo',
+     locations = ~ctry,
+     mode = 'text',
+     textfont=list(color='black',size='8'),
+     text = ~B60L
+   ) %>%
+   layout(
+     geo = g
+   )
+
+ggplotly(p)
+
+
+```
